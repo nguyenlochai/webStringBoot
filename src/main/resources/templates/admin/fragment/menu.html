@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="grid__column-menu" th:fragment="menu">
+    <div class="grid__column-menu-menu">
+        <h2>Menu</h2>
+        <ul class="grid__column-menu-list">
+            <li class="grid__column-menu-item"><a href="" class="grid__column-menu-item-link">Thương hiệu</a></li>
+            <li class="grid__column-menu-item"><a th:href="@{/admin/product}"  class="grid__column-menu-item-link">Sản phẩm</a></li>
+            <li class="grid__column-menu-item"><a th:href="@{/admin/showForm/category}" class="grid__column-menu-item-link">Loại sản phẩm</a></li>
+            <li class="grid__column-menu-item"><a class="grid__column-menu-item-link">Đơn hàng</a></li>
+            <li class="grid__column-menu-item"><a href="" class="grid__column-menu-item-link">Vận chuyển</a></li>
+            <li class="grid__column-menu-item"><a href="" class="grid__column-menu-item-link">Tài khoản</a></li>
+            <li class="grid__column-menu-item"><a href="" class="grid__column-menu-item-link">Thương hiệu</a></li>
+
+            <li class="grid__column-menu-item">
+                <form action="#" th:action="@{/logout}" method="POST" class="grid__column-menu-item-link">
+                    <input type="submit" class="btn btn-info " value="Đăng xuất" />
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>

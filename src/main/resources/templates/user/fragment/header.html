@@ -1,0 +1,250 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<header class="header" th:fragment="header">
+
+    <div class="grid">
+        <nav class="header__navbar">
+            <ul class="header__navbar-list">
+                <li class="header__navbar-item "><a href="" class="header__navbar-item-link">Nhận xét </a></li>
+                <li class="header__navbar-item header__navbar-item--separate">
+                    <a href="" class="header__navbar-item-link">Tải ứng dụng
+                        <div class="header__qr">
+                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/5b6e787c2e5ee052.png" alt="QR code" class="header__qr-img">
+                            <div class="header__qr-apps">
+                                <a href="" class="header__qr-link"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1fddd5ee3e2ead84.png" alt="Google Play" class="header__qr-download-img"></a>
+                                <a href=""><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/135555214a82d8e1.png" alt="App store" class="header__qr-download-img"></a>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="header__navbar-item "><a href="" class="header__navbar-item-link">Kết nối <i class='bx bxl-facebook-circle header__navbar-icon'></i> <i class='bx bxl-instagram'></i></a></li>
+                <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Tài khoản <i class='bx bxs-user-account header__navbar-icon'></i>  </a> </li>
+            </ul>
+
+            <!--            nếu chưa đăng nhập-->
+            <ul  th:if="${username == null}" class="header__navbar-list">
+                <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Ngôn ngữ <i class='bx bx-world'></i>  </a> </li>
+                <li class="header__navbar-item">
+                    <a href="" class="header__navbar-item-link">Thông báo <i class='bx bxs-bell-ring header__navbar-icon' ></i> </a>
+                    <div class="header__notify">
+                        <header class="header__notify-header">
+                            <h5>Thông báo mới </h5>
+                            <ul class="header__notify-list">
+                                <li class="header__notify-item">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://png.pngtree.com/png-clipart/20230510/ourmid/pngtree-pink-blue-neon-border-light-effect-circle-png-image_7093035.png" alt="" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-info-name">15h mã giảm giá lên đến 1 triệu lên sóng</span>
+                                            <span class="header__notify-info-description">giảm giá tốt miến ship toàm cầu, deal tốt 100 %, độc quyền chỉ trong 15h ngày 18/9/2024 :)))))))))</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notify-item">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://png.pngtree.com/png-clipart/20230510/ourmid/pngtree-pink-blue-neon-border-light-effect-circle-png-image_7093035.png" alt="" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-info-name">15h mã giảm giá lên đến 1 triệu lên sóng sdadsadadasasad</span>
+                                            <span class="header__notify-info-description">giảm giá tốt miến ship toàm cầu, deal tốt 100 %, độc quyền chỉ trong 15h ngày 18/9/2024 :)))))))))</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notify-item">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://png.pngtree.com/png-clipart/20230510/ourmid/pngtree-pink-blue-neon-border-light-effect-circle-png-image_7093035.png" alt="" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-info-name">15h mã giảm giá lên đến 1 triệu lên sóng</span>
+                                            <span class="header__notify-info-description">giảm giá tốt miến ship toàm cầu, deal tốt 100 %, độc quyền chỉ trong 15h ngày 18/9/2024 :)))))))))</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h5>Xem tất cả</h5>
+                        </header>
+                    </div>
+                </li>
+                <li class="header__navbar-item">
+                    <a href="" class="header__navbar-item-link">Trợ giúp <i class='bx bx-help-circle header__navbar-icon' ></i></a>
+                </li>
+                <li class="header__navbar-item">
+                    <a href="" class="header__navbar-item-link">Liên hệ</a>
+                </li>
+
+
+                <!-- Nếu username là null -->
+
+                <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate2">Đăng ký</li>
+                <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+
+
+
+
+                <li class="header__navbar-item header__navbar-item--strong"><i class='bx bxs-angry' ></i></li>
+
+            </ul>
+
+<!--            nếu đã đăng nhập-->
+            <ul  th:if="${username != null}" class="header__navbar-list">
+                <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Ngôn ngữ <i class='bx bx-world'></i>  </a> </li>
+                <li class="header__navbar-item">
+                    <a href="" class="header__navbar-item-link">Thông báo <i class='bx bxs-bell-ring header__navbar-icon' ></i> </a>
+                    <div class="header__notify">
+                        <header class="header__notify-header">
+                            <h5>Thông báo mới </h5>
+                            <ul class="header__notify-list">
+                                <li class="header__notify-item">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://png.pngtree.com/png-clipart/20230510/ourmid/pngtree-pink-blue-neon-border-light-effect-circle-png-image_7093035.png" alt="" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-info-name">15h mã giảm giá lên đến 1 triệu lên sóng</span>
+                                            <span class="header__notify-info-description">giảm giá tốt miến ship toàm cầu, deal tốt 100 %, độc quyền chỉ trong 15h ngày 18/9/2024 :)))))))))</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notify-item">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://png.pngtree.com/png-clipart/20230510/ourmid/pngtree-pink-blue-neon-border-light-effect-circle-png-image_7093035.png" alt="" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-info-name">15h mã giảm giá lên đến 1 triệu lên sóng sdadsadadasasad</span>
+                                            <span class="header__notify-info-description">giảm giá tốt miến ship toàm cầu, deal tốt 100 %, độc quyền chỉ trong 15h ngày 18/9/2024 :)))))))))</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notify-item">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://png.pngtree.com/png-clipart/20230510/ourmid/pngtree-pink-blue-neon-border-light-effect-circle-png-image_7093035.png" alt="" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-info-name">15h mã giảm giá lên đến 1 triệu lên sóng</span>
+                                            <span class="header__notify-info-description">giảm giá tốt miến ship toàm cầu, deal tốt 100 %, độc quyền chỉ trong 15h ngày 18/9/2024 :)))))))))</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h5>Xem tất cả</h5>
+                        </header>
+                    </div>
+                </li>
+                <li class="header__navbar-item">
+                    <a href="" class="header__navbar-item-link">Trợ giúp <i class='bx bx-help-circle header__navbar-icon' ></i></a>
+                </li>
+                <li class="header__navbar-item">
+                    <a href="" class="header__navbar-item-link">Liên hệ</a>
+                </li>
+
+
+                <!-- Nếu username có -->
+                <li class="header__navbar-item">
+                    <span th:text="${username}" class="header__navbar-username-name"></span>
+                    <div  class="header__navbar-username">
+                        <ul>
+                            <li>
+                                <a href="#">Quản lý tài khoản</a>
+                            </li>
+                            <li>
+                                <a href="#">Đơn hàng</a>
+                            </li>
+                            <li>
+                                <a href="#">Trả hàng và hủy đơn hàng</a>
+                            </li>
+                            <li>
+                                <a href="#">Đánh giá</a>
+                            </li>
+                            <li>
+                                <a href="#">Cửa hàng theo dõi</a>
+                            </li>
+                            <li>
+                                <form action="#" th:action="@{/logout}" method="POST" class="header__navbar-username-logout">
+                                    <input type="submit" class="btn btn-info header__navbar-username-logout-btn" value="Đăng xuất" />
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="header__navbar-item header__navbar-item--strong"><i class='bx bxs-angry' ></i></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="header-with-search">
+            <div class="header__search">
+                <input type="text" class="header__search-input" placeholder="tìm kiếm sản phẩm"> <i class='bx bx-search header__search-icon' ></i>
+                <div class="header__search-history">
+                    <h3 class="header__search-history-headinng">lịch sử tìm kiếm</h3>
+                    <ul class="header__search-history-list">
+                        <li class="header__search-history-item">
+                            <i class='bx bx-search-alt header__search-history-item-icon'></i>
+                            <a href="">bao tay free fire</a>
+                        </li>
+                        <li class="header__search-history-item">
+                            <i class='bx bx-search-alt header__search-history-item-icon'></i>
+                            <a href="">hậu nghiện game free fire</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__logo">
+                <img src="https://png.pngtree.com/png-clipart/20221008/original/pngtree-blue-pink-neon-border-circle-png-image_8666308.png" alt="" class="header__logo-img">
+                <div class="header__logo-name"> diamonshop</div>
+            </div>
+            <div class="header__Cart">
+                <i class='bx bx-cart-alt header__Cart-icon'></i>
+                <div class="header__Cart-item"><img src="https://www.eherbalmarket.vn/assets/images/no-cart.png" alt="" class="header__Cart-img"></div>
+                <span class="header__Cart-quaty">3</span>
+
+            </div>
+        </div>
+        <img src="https://lzd-img-global.slatic.net/us/domino/ee747ce7c6592b0198f9068c120ba993.png" alt="" class="header__Cart-trademark-zalopay">
+        <ul class="header__item">
+            <li class="header__item-list">
+                điện gia dụng
+            </li>
+            <li class="header__item-list">
+                mẹ và bé
+            </li>
+            <li class="header__item-list">
+                khỏe đẹp
+            </li>
+            <li class="header__item-list">
+                nhà cửa
+            </li>
+            <li class="header__item-list">
+                sách
+            </li>
+            <li class="header__item-list">
+                thể thao
+            </li>
+            <li class="header__item-list">
+                sách
+            </li>
+            <li class="header__item-list">
+                sách
+            </li>
+            <li class="header__item-list">
+                sách
+            </li>
+            <li class="header__item-list">
+                sách
+            </li>
+            <li class="header__item-list">
+                sách
+            </li>
+            <li class="header__item-list">
+                nhà cửa
+            </li>
+            <li class="header__item-list">
+                nhà cửa
+            </li>
+            <li class="header__item-list">
+                nhà cửa
+            </li>
+            <li class="header__item-list">
+                nhà cửa
+            </li><li class="header__item-list">
+            nhà cửa
+        </li>
+
+        </ul>
+    </div>
+</header>

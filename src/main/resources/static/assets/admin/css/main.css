@@ -1,0 +1,461 @@
+/* header */
+.header{
+    background-image: linear-gradient(0deg, rgb(67, 103, 211), rgb(38, 195, 22));
+    height: 64px;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    width: 100%;
+}
+.header__navbar{
+    
+}
+.header__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_navbar-heading-h1{
+    display: flex;
+    align-items: center;
+}
+.header__navbar-heading-icon {
+    font-size: 28px;
+    margin-left: 10px;
+}
+.header__navbar-heading-heading{
+    color: red;
+}
+.header__navbar-list{
+    display: flex;
+    align-items: center;
+}
+.header__navbar-item{
+    list-style: none;
+    font-size: 16px;
+}
+.header__navbar-item:not(:last-child){
+    
+    margin-right: 18px;
+    
+}
+
+.header__navbar-item-link{
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+
+/* mennu */
+.grid__column-menu-menu{
+    margin-top: 70px;
+}
+.grid__column-menu-list{
+    
+}
+.grid__column-menu-item{
+
+}
+.grid__column-menu-item-link{
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 18px;
+    line-height: 48px;
+}
+
+
+/* container tổng quát */
+.container__container{
+    margin-top: 100px;
+}
+.container__overview{
+   
+}
+.container__overview-heading {
+    margin-left: 80px;
+}
+.container__overview-panel{
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 7%;
+}
+.container__overview-panel-item{
+    list-style: none;
+}
+.container__overview-panel-item-link1{
+    text-decoration: none;
+    color: var(--white-color);
+    background-image: linear-gradient(0deg, rgb(211 148 67), rgb(205 93 57));
+    padding: 50px 80px 80px 80px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.container__overview-panel-item-link2{
+    text-decoration: none;
+    color: var(--white-color);
+    background-image: linear-gradient(0deg, rgb(12 46 223), rgb(182 42 231));
+    padding: 50px 80px 80px 80px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.container__overview-panel-item-link3{
+    text-decoration: none;
+    color: var(--white-color);
+    background-image: linear-gradient(0deg, rgb(241 1 1), rgb(209 72 72));
+    padding: 50px 80px 80px 80px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.container__overview-panel-item-link4{
+    text-decoration: none;
+    color: var(--white-color);
+    background-image: linear-gradient(0deg, rgb(67 211 199), rgb(255 240 0));
+    padding: 50px 80px 80px 80px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.container__overview-panel-item-quanty {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* modal thêm sản phẩm */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+   
+}
+
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__body {
+    width: 1000px;
+    height: 900px;
+    z-index: 1;
+    margin: auto;
+    background-color: var(--white-color);
+    padding: 50px;
+    animation: thongBao linear 0.25s;
+}
+.form__add-product{
+    position: relative;
+}
+.form__add-product-icon-close{
+    position: absolute;
+    font-size: 30px;
+    right: -42px;
+    top: -64px;
+    cursor: pointer;
+}
+
+.form__add-product-group-heading {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #ff4747;
+}
+.form__add-product-group {
+    width: 100%;
+    height: 39px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.form__add-product-group:last-child .form__add-product-group {
+   height: 200px;
+   padding: 10px;
+}
+.form__add-product-group-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.form__add-product-group-item {
+    width: 44%;
+}
+.form__add-product-group-item-name {
+    margin: 0px;
+    line-height: 35px;
+    font-size: 18px;
+}
+button.form__add-product-group-submit {
+    font-size: 26px;
+    margin-top: 34px;
+}
+
+/* modal thêm loại sản phẩm */
+
+
+.form__add-category{
+    position: relative;
+}
+.form__icon-close{
+    position: absolute;
+    font-size: 30px;
+    right: -42px;
+    top: -64px;
+    cursor: pointer;
+}
+
+.form__add-category-group-heading {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #ff4747;
+}
+.form__add-category-group {
+    width: 100%;
+    height: 39px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.form__add-category-group:last-child .form__add-category-group {
+   height: 200px;
+   padding: 10px;
+}
+.form__add-category-group-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.form__add-category-group-item {
+    width: 44%;
+}
+.form__add-category-group-item-name {
+    margin: 0px;
+    line-height: 35px;
+    font-size: 18px;
+}
+button.form__add-category-group-submit {
+    font-size: 26px;
+    margin-top: 34px;
+}
+
+/* category */
+.Category {
+    margin-left: 60px;
+    margin-top: 110px;
+}
+.Category__block {
+    border: 1px solid;
+    padding: 30px;
+    box-shadow: 1px 1px 1px 1px;
+    width: 463%;
+    border-radius: 3px;
+}
+.Category__block-heading {
+    font-size: 22px;
+    color: #555;
+
+}
+.Category__block-add-category {
+    margin-top: 26px;
+    margin-bottom: 30px;
+}
+
+.form__add-category-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.form__add-category-table th, .form__add-category-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+.form__add-category-table thead th {
+    background-color: #009879;
+    color: white;
+    text-transform: uppercase;
+}
+
+.form__add-category-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.form__add-category-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.form__add-category-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.form__add-category-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+/* product */
+
+.form__add-product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.form__add-product-table th, .form__add-product-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+.form__add-product-table thead th {
+    background-color: #009879;
+    color: white;
+    text-transform: uppercase;
+}
+
+.form__add-product-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.form__add-product-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.form__add-product-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.form__add-product-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+/*phân trang*/
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+
+/*search*/
+.header-with-search{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__search{
+    position: relative;
+    margin-left: -106px;
+    z-index: 1;
+
+}
+
+.header__search-icon{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 22px;
+    padding: 7px 19px;
+    background: #edad76;
+    border-radius: 35px 0px 0px 35px;
+    color: #033bbd;
+}
+
+.header__search-input{
+    width: 400px;
+    padding: 14px;
+    height: 40px;
+    font-size: 14px;
+    outline: orangered;
+    border-radius: 6px;
+}
+
+.header__search-input:focus ~ .header__search-history{
+    display: block;
+}
+
+.header__search-history{
+    background-color: var(--white-color);
+    padding-left: 18px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    border: 1px solid #999;
+    display: none;
+}
+
+.header__search-history-item-icon {
+    font-size: 26px;
+}
+
+.header__search-history-headinng{
+    font-size: 16px;
+}
+.header__search-history-list{
+    list-style: none;
+    padding: 0px;
+    font-size: 14px;
+}
+.header__search-history-item{
+    display: flex;
+    margin-top: 14px;
+
+}
+
+.header__search-history-item a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

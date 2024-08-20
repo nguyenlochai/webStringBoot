@@ -1,0 +1,79 @@
+:root {         /* lớp giả */
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+
+}
+
+*{  /* box-sizing(kích thước hộp): là nguyên kích thước hộp. khi bị padding và border làm tăng kích thước hộp lên thì box-sizing sẽ giữ nguyên thích thước là with chúng ta đặt ra */
+    box-sizing: inherit; /* inherit là kế thừa lại box-sizing: border-box;*/
+}
+
+/* font chữ và chiều cao chữ ... mặt định*/
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;   /* kiểu chữ không có chân */
+    box-sizing: border-box;
+}
+
+
+.grid{
+    width: 1600px;  /* màn hình lớn hơn 1200px thì max là 1200px */
+    max-width: 100%;/* màn hình nhỏ hơn 1200px thì nó sẽ bằng kích thước màn hình 100% */
+    margin: 0 auto;
+
+}
+
+.grid_full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid__row-1{
+    display: flex;
+    margin: 4px 200px;
+    width: 100%;
+}
+
+.grid__row-1-1{
+    width: 100%;
+}
+
+.grid__row-2{
+    display: flex;
+    margin: 4px 200px;
+    width: 100%;
+}
+
+.grid__row-2-2{
+    width: 100%;
+}
+
+.grid__row-3{
+    display: flex;
+    margin: 4px 200px;
+    width: 100%;
+}
+
+.grid__row-3-3{
+    width: 100%;
+}
+
+.grid__row-4{
+    display: flex;
+    margin: 4px 300px;
+    width: 100%;
+}
+
+.grid__row-4-4{
+    width: 100%;
+}
+
+li{
+    list-style-type: none;
+}

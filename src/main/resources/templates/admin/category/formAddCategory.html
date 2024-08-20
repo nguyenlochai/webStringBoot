@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "~{admin/fragment/head :: head}"></head>
+<body>
+
+<div class="app">
+
+    <header class="header" th:replace = "~{admin/fragment/header :: header}">
+    </header>
+
+    <div class="container">
+        <div class="grid__row">
+
+            <div class="grid__column-menu" th:replace = "~{admin/fragment/menu :: menu}">
+            </div>
+
+            <div class="grid__column-container">
+                <div class="container__container">
+                    <div class="container__overview">
+                        <h1 class="container__overview-heading">Chào mừng đến với bảng điều khiển</h1>
+                        <ul class="container__overview-panel">
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link1">Tất cả loại sản phẩm</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link2">Tất cả thương hiệu</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link3">Tất cả người dùng</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link4">Tất cả đơn hàng</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal">
+                <div class="modal__overlay">
+
+                </div>
+                <div class="modal__body">
+                    <div class="form__add-category">
+                        <div class="form__icon-close"><i class='bx bx-x-circle'></i></div>
+
+                        <div class="form__add-category-new">
+                            <h1 class="form__add-category-group-heading">Thêm loại sản phẩm</h1>
+                            <form action="" class="form__add-category-container" th:action="@{/admin/addCategory}" th:object="${addCategory}" method="POST" >
+                                <div th:if="${param.error}" class="form__add-category-group-list">
+                                    <span th:text="${param.error}"></span>
+                                </div>
+                                <div  class="form__add-category-group-list">
+                                    <span th:text="${my_error}"></span>
+                                </div>
+                                <div class="form__add-category-group-list">
+                                    <div class="form__add-category-group-item">
+                                        <span class="form__add-category-group-item-name">Tên loại sản phẩm</span>
+                                        <input type="text" name="nameCategory" class="form__add-category-group" th:field="*{name_category}"  placeholder="Loại sản phẩm ">
+                                        <span th:if="${#fields.hasErrors('name_category')}">
+                                            <ul>
+                                                <li th:each="err : ${#fields.errors('name_category')}" th:text="${err}"></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <button type="submit" class="form__add-product-group-submit"> Thêm </button>
+
+                            </form>
+                        </div>
+                        <div  class="">
+                            <table class="form__add-category-table">
+                                <thead>
+                                    <th>ID</th>
+                                    <th>Loại sản phẩm</th>
+
+                                </thead>
+                                <tbody>
+                                    <tr  th:each="category : ${category}">
+                                        <td th:text="${category.id}"></td>
+                                        <td th:text="${category.nameCategory}"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script th:src="@{/assets/admin/js/index.js}"></script>
+</body>
+</html>

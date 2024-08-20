@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "~{admin/fragment/head :: head}"></head>
+<body>
+
+<div class="app">
+
+    <header class="header" th:replace = "~{admin/fragment/header :: header}">
+    </header>
+
+    <div class="container">
+        <div class="grid__row">
+
+            <div class="grid__column-menu" th:replace = "~{admin/fragment/menu :: menu}">
+            </div>
+
+            <div class="grid__column-container">
+                <div class="container__container">
+                    <div class="container__overview">
+                        <h1 class="product-heading">
+                            <a th:href="@{/admin/showForm/product}">Thêm sản phẩm</a>
+                        </h1>
+                        <form>
+                            <div class="header-with-search">
+                                <div class="header__search">
+
+                                    <input name="keyword" type="text" class="header__search-input" placeholder="tìm kiếm sản phẩm" th:value="${keyword}">
+                                    <button type="submit">
+                                        <i class='bx bx-search header__search-icon' ></i>
+                                    </button>
+                                    <div class="header__search-history">
+                                        <h3 class="header__search-history-headinng">lịch sử tìm kiếm</h3>
+                                        <ul class="header__search-history-list">
+
+                                            <li class="header__search-history-item">
+                                                <i class='bx bx-search-alt header__search-history-item-icon'></i>
+                                                <a href="">bao tay free fire</a>
+                                            </li>
+                                            <li class="header__search-history-item">
+                                                <i class='bx bx-search-alt header__search-history-item-icon'></i>
+                                                <a href="">hậu nghiện game free fire</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div  class="">
+                            <table class="form__add-product-table">
+                                <thead>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>price</th>
+                                <th>sizes</th>
+                                <th>newProduct</th>
+                                <th>quantity</th>
+                                <th>title</th>
+                                <th>createdAt</th>
+                                <th>updatedAt</th>
+                                <th>details</th>
+                                <th>image</th>
+                                <th>category</th>
+
+
+
+                                </thead>
+                                <tbody>
+                                <tr  th:each="products : ${products}">
+                                    <td th:text="${products.id}"></td>
+                                    <td th:text="${products.name}"></td>
+                                    <td th:text="${products.price}"></td>
+                                    <td th:text="${products.sizes}"></td>
+                                    <td th:text="${products.newProduct}"></td>
+                                    <td th:text="${products.quantity}"></td>
+                                    <td th:text="${products.title}"></td>
+                                    <td th:text="${products.createdAt}"></td>
+                                    <td th:text="${products.updatedAt}"></td>
+                                    <td th:text="${products.details}"></td>
+                                    <td th:text="${products.image}"></td>
+                                    <td th:text="${products.category.id}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <a th:if="${currentPage > 1}" th:href="@{'?pageNo='+ ${currentPage-1}}">&laquo;</a>
+                    <a th:each="i:${#numbers.sequence(1, totalPage)}"
+                       th:classappend="${currentPage == i ? 'active' : ''}"
+                       th:href="@{${keyword != null && keyword != '' ? '?keyword=' + keyword + '&' : '?'} + 'pageNo=' + ${i}}"
+
+                       th:text="${i}">
+                    </a>
+
+
+
+                    <a th:if="${currentPage < totalPage}" th:href="@{'?pageNo='+ ${currentPage+1}}">&raquo;</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script th:src="@{/assets/admin/js/index.js}"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header class="header" th:fragment="header">
+
+    <div class="grid">
+
+        <div class="header__navbar">
+            <div class="header__navbar-heading">
+                <div class="header_navbar-heading-h1">
+                    <h1 class="header__navbar-heading-heading">Admin</h1>
+                    <i class='bx bx-menu header__navbar-heading-icon'></i>
+                </div>
+            </div>
+            <div class="header__navbar-heading">
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Đơn hàng</a></li>
+                    <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Vận chuyển</a></li>
+                    <li class="header__navbar-item"><a href="" class="header__navbar-item-link">User</a></li>
+                    <li class="header__navbar-item">
+                        <form action="#" th:action="@{/logout}" method="POST" class="header__navbar-username-logout">
+                            <input type="submit" class="btn btn-info header__navbar-username-logout-btn" value="Đăng xuất" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</header>

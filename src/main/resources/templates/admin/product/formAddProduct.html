@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "~{admin/fragment/head :: head}"></head>
+<body>
+
+<div class="app">
+
+    <header class="header" th:replace = "~{admin/fragment/header :: header}">
+    </header>
+
+    <div class="container">
+        <div class="grid__row">
+
+            <div class="grid__column-menu" th:replace = "~{admin/fragment/menu :: menu}">
+            </div>
+
+            <div class="grid__column-container">
+                <div class="container__container">
+                    <div class="container__overview">
+                        <h1 class="container__overview-heading">Chào mừng đến với bảng điều khiển</h1>
+                        <ul class="container__overview-panel">
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link1">Tất cả loại sản phẩm</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link2">Tất cả thương hiệu</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link3">Tất cả người dùng</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                            <li class="container__overview-panel-item">
+                                <a href="" class="container__overview-panel-item-link4">Tất cả đơn hàng</a>
+                                <hr>
+                                <span class="container__overview-panel-item-quanty">666</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal">
+                <div class="modal__overlay">
+
+                </div>
+                <div class="modal__body">
+                    <div class="form__add-category">
+                        <div class="form__icon-close"><i class='bx bx-x-circle'></i></div>
+
+                        <div class="form__add-category-new">
+                            <h1 class="form__add-category-group-heading">Thêm sản phẩm</h1>
+                            <form action="" class="form__add-category-container" th:action="@{/admin/addProduct}" th:object="${addProduct}" method="POST" enctype="multipart/form-data">
+                                <div th:if="${param.error}" class="form__add-category-group-list">
+                                    <span th:text="${param.error}"></span>
+                                </div>
+                                <div class="form__add-category-group-list">
+                                    <span th:text="${my_error}"></span>
+                                </div>
+                                <div class="form__add-product-group">
+                                    <span class="form__add-product-group-item-name">Tiêu đề sản phẩm</span>
+                                    <input type="text" name="title" th:field="*{title}" class="form__add-product-group" placeholder="Tiêu đề sản phẩm ">
+                                    <span th:if="${#fields.hasErrors('title')}">
+            <ul>
+                <li th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+            </ul>
+        </span>
+                                </div>
+                                <div class="form__add-product-group-list">
+                                    <div class="form__add-product-group-item">
+                                        <span class="form__add-product-group-item-name">Loại sản phẩm</span>
+                                        <select th:field="*{category}" name="nameCategory" class="form__add-product-group">
+                                            <option value="" disabled selected>Chọn loại sản phẩm</option>
+                                            <option th:each="name_category : ${name_category}"
+                                                    th:value="${name_category.id}"
+                                                    th:text="${name_category.nameCategory}">
+                                            </option>
+                                        </select>
+                                        <span th:if="${#fields.hasErrors('category')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('category')}" th:text="${err}"></li>
+                </ul>
+            </span>
+                                    </div>
+
+                                    <div class="form__add-product-group-item">
+                                        <span class="form__add-product-group-item-name">Tên sản phẩm</span>
+                                        <input type="text" th:field="*{name}" name="name" class="form__add-product-group" placeholder="Tên sản phẩm ">
+                                        <span th:if="${#fields.hasErrors('name')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('name')}" th:text="${err}"></li>
+                </ul>
+            </span>
+                                    </div>
+                                    <div class="form__add-product-group-item">
+                                        <span class="form__add-product-group-item-name">Giá sản phẩm </span>
+                                        <input type="text" th:field="*{price}" name="price" class="form__add-product-group" placeholder="Giá sản phẩm ">
+                                        <span th:if="${#fields.hasErrors('price')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
+                </ul>
+            </span>
+                                    </div>
+                                    <div class="form__add-product-group-item">
+                                        <span class="form__add-product-group-item-name">Giá sản phẩm được giảm</span>
+                                        <input type="text" th:field="*{discount}" name="discount" class="form__add-product-group" placeholder="Giá sản phẩm được giảm">
+                                        <span th:if="${#fields.hasErrors('discount')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('discount')}" th:text="${err}"></li>
+                </ul>
+            </span>
+                                    </div>
+                                    <div class="form__add-product-group-item">
+                                        <span class="form__add-product-group-item-name">Sizes sản phẩm</span>
+                                        <input type="text" th:field="*{sizes}" name="sizes" class="form__add-product-group" placeholder="Sizes sản phẩm ">
+                                        <span th:if="${#fields.hasErrors('sizes')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('sizes')}" th:text="${err}"></li>
+                </ul>
+            </span>
+                                    </div>
+                                    <div class="form__add-product-group-item">
+                                        <span class="form__add-product-group-item-name">Số lượng sản phẩm</span>
+                                        <input type="text" th:field="*{quantity}" name="quantity" class="form__add-product-group" placeholder="Số lượng sản phẩm ">
+                                        <span th:if="${#fields.hasErrors('quantity')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('quantity')}" th:text="${err}"></li>
+                </ul>
+            </span>
+                                    </div>
+                                </div>
+
+                                <div class="form__add-product-group">
+                                    <span class="form__add-product-group-item-name">Ảnh sản phẩm sản phẩm</span>
+                                    <input type="file" th:field="*{image}" name="image" class="form__add-product-group" >
+                                    <span th:if="${#fields.hasErrors('image')}">
+            <ul>
+                <li th:each="err : ${#fields.errors('image')}" th:text="${err}"></li>
+            </ul>
+        </span>
+                                </div>
+
+                                <div class="form__add-product-group">
+                                    <span class="form__add-product-group-item-name">Chi tiết sản phẩm</span>
+                                    <textarea name="details" th:field="*{details}" class="form__add-product-group" placeholder="Chi tiết sản phẩm "></textarea>
+                                    <span th:if="${#fields.hasErrors('details')}">
+            <ul>
+                <li th:each="err : ${#fields.errors('details')}" th:text="${err}"></li>
+            </ul>
+        </span>
+                                </div>
+                                <button type="submit" class="form__add-product-group-submit"> Thêm </button>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script th:src="@{/assets/admin/js/index.js}"></script>
+</body>
+</html>
